@@ -49,7 +49,7 @@ char scan_keypad() {
 
         for (int j = 0; j < NCOLS; j++) {                   // check each column for active state
             if (gpio_get_level(col_pins[j]) == ACTIVE) {    // if column is high,
-                key = keypad_array[i][j];                   // get the pressed key from the array         
+                new_key = keypad_array[i][j];                   // get the pressed key from the array         
             }
         }
         gpio_set_level(row_pins[i], !ACTIVE);   // set current row back to inactive state
